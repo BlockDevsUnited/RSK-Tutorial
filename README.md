@@ -69,7 +69,7 @@ truffle unbox rsksmart/rsk-starter-box
 
 * add an input, label, and button to Get and Set a variable from the blockchain
 ```
-<input placeholder = "value to Set"></input> <button onclick="write()">Set</button> <br>
+<input id="dataToWrite" placeholder = "value to Set"></input> <button onclick="write()">Set</button> <br>
     		<button onclick="read()">Get</button> <label id="dataToShow"></label>
 ```
 
@@ -80,7 +80,7 @@ truffle unbox rsksmart/rsk-starter-box
 //Set up the connection to the RSK blockchain
 let contract
 let contractAddress
-let contractABI
+let contract
 async function initialize(){
 }
 //Read a value from the smart contract
@@ -120,7 +120,7 @@ contract SimpleStorage {
 
 * Save the contract code in "SimpleStorage.sol" in the contracts folder of the truffle project
 
-* Copy the ABI (in the compile tab on remix) and save it for later use. 
+* Copy the ABI (in the compile tab on remix) and save it for later use. Don't forget to redo your ABI evertime you make changes to your code.
 
 ### 5a. Deploy the contract with truffle (truffle option)
 
@@ -159,7 +159,7 @@ truffle migrate --testnet
 
 This lets us use the ethersjs javascript library to interact with RSK. RSK is compatible with the Ethereum virtual machine so ethersjs works like a charm. 
 
-* In index.js, define a new contract and contractAddress and contractABI. Use your deployed contract for the contract address. and paste your contractABI
+* In index.js, define a new contract and contractAddress and contractABI. Use your deployed contract for the contract address (in quotes). and paste your contractABI
 ```
 let contract
 let contractAddress = 0x00YourContractAddress
@@ -188,7 +188,7 @@ async function initialize() {
 * In index.html, import index.js and call initialize when the page loads. The web3 object is injected automatically by Metamask. 
 ```
   <script src = index.js></script>
-  <script>initialize(web3)</script?
+  <script>initialize(web3)</script>
 ```
 
 * Write a get and set function for index.js. These will get and set the value in the smart contract
@@ -213,6 +213,11 @@ async function write(){
 
 ### 7. Test it out!
 
+* Navigate to the 'src' folder in your terminal and input the following command to start you server
 
+```
+python -m http.server
+```
+Navigate to http://localhost:8000/ in your browser and test your app out to see if the set and get buttons work as expected. 
 
 
