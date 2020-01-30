@@ -84,10 +84,10 @@ let contract
 async function initialize(){
 }
 //Read a value from the smart contract
-async function read(){
+async function readFromBlockchain(){
 }
 //Write a value to the smart contract
-async function write() {
+async function writeToBlockchain() {
 }
 ```
 
@@ -98,7 +98,7 @@ async function write() {
 * Go to remix.ethereum.org, create a new file,  and copy this code into it.
 
 ```
-pragma solidity 0.6.0;
+pragma solidity 0.5.11;
 
 contract SimpleStorage {
     uint storedData;
@@ -194,13 +194,13 @@ async function initialize() {
 * Write a get and set function for index.js. These will get and set the value in the smart contract
 
 ```
-async function read(){
+async function readFromBlockchain(){
 
     document.getElementById("dataToShow").innerHTML = await contract.get();
 
 }
 
-async function write(){
+async function writeToBlockchain(){
   let data = document.getElementById("dataToWrite").value
   console.log(data)
   await contract.set(data)
@@ -208,8 +208,6 @@ async function write(){
 ```
 
 * Again take time to understand the code before proceeding
-
-* In index.html, 
 
 ### 7. Test it out!
 
