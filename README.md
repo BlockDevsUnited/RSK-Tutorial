@@ -84,10 +84,10 @@ let contract
 async function initialize(){
 }
 //Read a value from the smart contract
-async function read(){
+async function readFromBlockchain(){
 }
 //Write a value to the smart contract
-async function write() {
+async function writeToBlockchain() {
 }
 ```
 
@@ -98,7 +98,7 @@ async function write() {
 * Go to remix.ethereum.org, create a new file,  and copy this code into it.
 
 ```
-pragma solidity 0.6.0;
+pragma solidity 0.5.11;
 
 contract SimpleStorage {
     uint storedData;
